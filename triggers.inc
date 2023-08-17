@@ -10,8 +10,8 @@ enum TRIGGERS_ENUM
 
 new TRIGGERS[2][TRIGGERS_ENUM] =
 {
-	{{1751.5178, -2048.2554, 20.1879}, "Поговорить с персонажем", 1024, 0, 0},
-	{{1744.1252, -2048.0156, 20.6215}, "Загрузить груз в машину", 1024, 0, 0}
+	{{1751.5178, -2048.2554, 20.1879}, "ГЏГ®ГЈГ®ГўГ®Г°ГЁГІГј Г± ГЇГҐГ°Г±Г®Г­Г Г¦ГҐГ¬", 1024, 0, 0},
+	{{1744.1252, -2048.0156, 20.6215}, "Г‡Г ГЈГ°ГіГ§ГЁГІГј ГЈГ°ГіГ§ Гў Г¬Г ГёГЁГ­Гі", 1024, 0, 0}
 };
 
 new PlayerText:TRIGGER_NOTIFY_TD[MAX_PLAYERS][3];
@@ -19,8 +19,6 @@ new PlayerText:TRIGGER_NOTIFY_TD[MAX_PLAYERS][3];
 new PLAYER_TRIGGER_TIMER[MAX_PLAYERS];
 new PLAYER_TRIGGER_ID[MAX_PLAYERS];
 new PLAYER_TRIGGER_DEBUG[MAX_PLAYERS];
-
-//local KEYS = { [0] = "None", [1] = "CTRL", [2] = "H / C", [4] = "L ALT / LMB", [8] = "W / SPACE", [16] = "ENTER", [32] = "S / LSHIFT", [64] = "E", [128] = "SPACE / RMB", [256] = "Q", [320] = "2", [512] = "2", [1024] = "ALT", [2048] = "NUM8", [4096] = "NUM2", [8192] = "NUM4", [16384] = "NUM6", [65536] = "Y", [131072] = "N", [262144] = "H", [128] = "UP" }
 
 stock GET_KEY_NAME(ID)
 {
@@ -30,12 +28,12 @@ stock GET_KEY_NAME(ID)
 		case 0: KEY_NAME = "None";
 		case 1: KEY_NAME = "CTRL";
 		case 2: KEY_NAME = "H / C";
-		case 4: KEY_NAME = "ЛКМ";
+		case 4: KEY_NAME = "Г‹ГЉГЊ";
 		case 8: KEY_NAME = "SPACE";
 		case 16: KEY_NAME = "ENTER";
 		case 32: KEY_NAME = "SHIFT";
 		case 64: KEY_NAME = "E";
-		case 128: KEY_NAME = "ПКМ";
+		case 128: KEY_NAME = "ГЏГЉГЊ";
 		case 256: KEY_NAME = "Q";
 		case 320: KEY_NAME = "2";
 		case 512: KEY_NAME = "2";
@@ -69,15 +67,15 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 	{
 		case 0:
 		{
-			SendClientMessage(playerid, -1, "Охх.. Привет!");
+			SendClientMessage(playerid, -1, "ГЋГµГµ.. ГЏГ°ГЁГўГҐГІ!");
 		}
 
 		case 1:
 		{
-			SendClientMessage(playerid, -1, "Вы загузили что-то в машину!");
+			SendClientMessage(playerid, -1, "Г‚Г» Г§Г ГЈГіГ§ГЁГ«ГЁ Г·ГІГ®-ГІГ® Гў Г¬Г ГёГЁГ­Гі!");
 		}
 
-		default: SendClientMessage(playerid, 0xFF0000FF, "Произошла ошибка! Сообщите разработчикам проекта");
+		default: SendClientMessage(playerid, 0xFF0000FF, "ГЏГ°Г®ГЁГ§Г®ГёГ«Г  Г®ГёГЁГЎГЄГ ! Г‘Г®Г®ГЎГ№ГЁГІГҐ Г°Г Г§Г°Г ГЎГ®ГІГ·ГЁГЄГ Г¬ ГЇГ°Г®ГҐГЄГІГ ");
 	}
 
 	return _OnPlayerKeyStateChange(playerid, newkeys, oldkeys);
@@ -107,7 +105,7 @@ public OnPlayerPickUpDynamicPickup(playerid, pickupid)
 			PlayerTextDrawSetString(playerid, TRIGGER_NOTIFY_TD[playerid][1], tempNotify);
 
 			new tempNotifyKey[41];
-			format(tempNotifyKey, 41, "Для взаимодействия - используйте %s", GET_KEY_NAME(TRIGGERS[i][nKey]));
+			format(tempNotifyKey, 41, "Г„Г«Гї ГўГ§Г ГЁГ¬Г®Г¤ГҐГ©Г±ГІГўГЁГї - ГЁГ±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ %s", GET_KEY_NAME(TRIGGERS[i][nKey]));
 			PlayerTextDrawSetString(playerid, TRIGGER_NOTIFY_TD[playerid][2], FixText(tempNotifyKey));
 
 			ActionNotifyTrigger(playerid, 1);
@@ -176,7 +174,7 @@ stock ActionNotifyTrigger(playerid, action)
 			PlayerTextDrawSetProportional(playerid, TRIGGER_NOTIFY_TD[playerid][0], 1);
 			PlayerTextDrawSetShadow(playerid, TRIGGER_NOTIFY_TD[playerid][0], 0);
 
-			TRIGGER_NOTIFY_TD[playerid][1] = CreatePlayerTextDraw(playerid, 320.0003, 366.7109, "Њo™oўopњ¦©_c_Јepco®a›eЇ");
+			TRIGGER_NOTIFY_TD[playerid][1] = CreatePlayerTextDraw(playerid, 320.0003, 366.7109, "Е’oв„ўoВўopЕ“В¦В©_c_ВЈepcoВ®aвЂєeВЇ");
 			PlayerTextDrawLetterSize(playerid, TRIGGER_NOTIFY_TD[playerid][1], 0.1510, 1.0441);
 			PlayerTextDrawAlignment(playerid, TRIGGER_NOTIFY_TD[playerid][1], 2);
 			PlayerTextDrawColor(playerid, TRIGGER_NOTIFY_TD[playerid][1], -1061109505);
@@ -185,7 +183,7 @@ stock ActionNotifyTrigger(playerid, action)
 			PlayerTextDrawSetProportional(playerid, TRIGGER_NOTIFY_TD[playerid][1], 1);
 			PlayerTextDrawSetShadow(playerid, TRIGGER_NOTIFY_TD[playerid][1], 0);
 
-			TRIGGER_NOTIFY_TD[playerid][2] = CreatePlayerTextDraw(playerid, 323.0003, 392.4294, "ѓћ¬_ўџaњЇoљeќc¦ўњ¬_-_њcЈoћ©џyќ¦e_ALT");
+			TRIGGER_NOTIFY_TD[playerid][2] = CreatePlayerTextDraw(playerid, 323.0003, 392.4294, "Ж’ЕѕВ¬_ВўЕёaЕ“ВЇoЕЎeВќcВ¦ВўЕ“В¬_-_Е“cВЈoЕѕВ©ЕёyВќВ¦e_ALT");
 			PlayerTextDrawLetterSize(playerid, TRIGGER_NOTIFY_TD[playerid][2], 0.1380, 0.8325);
 			PlayerTextDrawAlignment(playerid, TRIGGER_NOTIFY_TD[playerid][2], 2);
 			PlayerTextDrawColor(playerid, TRIGGER_NOTIFY_TD[playerid][2], -1061109505);
@@ -217,9 +215,8 @@ stock ActionNotifyTrigger(playerid, action)
 	return 1;
 }
 
-CMD:createtriggerstext(playerid) // Команда, сделанная для дебага
+CMD:createtriggerstext(playerid)
 {
-	//Ваши проверки на админки
 	for(new i; i < sizeof(TRIGGERS); i++)
 	{
 		CreatePlayer3DTextLabel(playerid, TRIGGERS[i][nNotif], -1, TRIGGERS[i][nPos][0], TRIGGERS[i][nPos][1], TRIGGERS[i][nPos][2], 10.0);
@@ -227,9 +224,8 @@ CMD:createtriggerstext(playerid) // Команда, сделанная для дебага
 	return 1;
 }
 
-CMD:triggerdebug(playerid) // Команда, сделанная для дебага
+CMD:triggerdebug(playerid)
 {
-	//Ваши проверки на админки
 	PLAYER_TRIGGER_DEBUG[playerid] = !PLAYER_TRIGGER_DEBUG[playerid];
 	SEND_DEBUG_MESSAGE(playerid, 0xFF0000FF, "PLAYER_TRIGGER_DEBUG: %d", PLAYER_TRIGGER_DEBUG[playerid]);
 	return 1;
