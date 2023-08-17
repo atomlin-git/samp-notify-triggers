@@ -1,6 +1,6 @@
 Удобная и практичная система уведомлений на местах нажатия клавиш
 
-Для удобного использования в своём моде, рекомендую установить include-помощник для дебага - https://github.com/atomlin-git/pawn_portfolio_debugmessages
+Для удобного использования в своём моде, рекомендую установить include-помощник для дебага - https://github.com/atomlin-git/pawn_portfolio_debugmessages <br>
 #Если вы не хотите использовать include-помощник для дебага, удалите все упоминания SEND_DEBUG_MESS и SEND_DEBUG_MESSAGE из include, иначе он не скомпилируется
 
 В include встроены две дебаг-команды:
